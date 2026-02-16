@@ -1,0 +1,159 @@
+:root {
+  --ui-scale: 0.5;
+  --bg: #f3f4f6;
+  --panel: #f5f6f7;
+  --cell-border: #d8dce0;
+  --text: #1f1f1f;
+  --muted: #767676;
+  --accent: #106ebe;
+  --accent-hover: #0d5e9f;
+  --font-ui: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-ui);
+  background-color: #f2f2f4;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  width: 200%;
+  height: 200%;
+  transform: scale(var(--ui-scale));
+  transform-origin: top left;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(760px, 1fr) 25%;
+  height: 100%;
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 14px;
+}
+
+.menu {
+  font-size: 38px;
+  font-weight: 300;
+}
+
+.title {
+  font-size: 46px;
+  font-weight: 600;
+}
+
+/* DISPLAY */
+.result-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px 16px 16px;
+}
+
+.expression {
+  font-size: 37px;
+  color: var(--muted);
+}
+
+.result {
+  font-family: var(--font-display);
+  font-size: 50px;
+  font-weight: 600;
+}
+
+/* MEMORY */
+.memory-row {
+  display: flex;
+  gap: 45px;
+  padding: 0 14px;
+}
+
+.memory-btn {
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  color: #8a8f96;
+}
+
+.active-memory {
+  color: #232323;
+}
+
+/* BUTTONS */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.buttons button {
+  border: 1px solid var(--cell-border);
+  border-radius: 8px;
+  font-size: 41px;
+  background: white;
+  cursor: pointer;
+}
+
+.light {
+  background: white;
+}
+
+.equal {
+  background: var(--accent);
+  color: white;
+}
+
+.equal:hover {
+  background: var(--accent-hover);
+}
+
+/* HISTORY */
+.history {
+  border-left: 1px solid #dde1e5;
+  background: var(--panel);
+}
+
+.history-header {
+  display: flex;
+  gap: 60px;
+  font-size: 35px;
+}
+
+.history-header .active::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: #1f79c7;
+}
+
+.history-list {
+  padding: 28px;
+}
+
+.history-item {
+  text-align: right;
+  margin-bottom: 34px;
+}
+
+.history-expression {
+  font-size: 31px;
+  color: #707070;
+}
+
+.history-value {
+  font-size: 36px;
+  font-weight: 600;
+}
