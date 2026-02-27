@@ -1,0 +1,100 @@
+:root {
+  /* Microsoft To Do Dark Theme Colors */
+  --bg-primary: #1c1c1c;       /* Main background */
+  --bg-secondary: #252525;     /* Sidebar/Panel background */
+  --bg-hover: #2d2d2d;         /* Hover state */
+  --bg-selected: #3b3b3b;      /* Selected item background */
+  --bg-input: #292929;         /* Input field background */
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-tertiary: #737373;
+  
+  --accent-color: #788cde;     /* Default blue accent */
+  --accent-hover: #5a6kb9;
+  
+  --border-color: #3e3e3e;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  
+  --danger-color: #e74c3c;
+  --success-color: #2ecc71;
+  --warning-color: #f1c40f;
+  
+  /* Layout */
+  --sidebar-width: 280px;
+  --detail-panel-width: 360px;
+  --header-height: 48px;
+  
+  /* Typography */
+  --font-family: 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow: hidden; /* Prevent body scroll, handle in containers */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+  color: inherit;
+  background-color: var(--bg-input);
+  border: 1px solid transparent;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

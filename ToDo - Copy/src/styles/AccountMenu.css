@@ -1,0 +1,419 @@
+.account-menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.account-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #2a2a2a;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 500px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+}
+
+.account-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #404040;
+}
+
+.account-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #cccccc;
+}
+
+.account-modal-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.accounts-list-container {
+  margin-bottom: 10px;
+}
+
+.account-item-wrapper {
+  margin-bottom: 12px;
+}
+
+.account-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.account-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.account-item.active {
+  border-color: #0078d4;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.password-prompt {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px;
+  border-radius: 0 0 12px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+  margin-top: -4px;
+}
+
+.prompt-text {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.prompt-input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.prompt-input-group input {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1px solid #404040;
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.prompt-input-group input.error {
+  border-color: #dc3545;
+}
+
+.prompt-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.confirm-btn {
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.confirm-btn:hover:not(:disabled) {
+  background: #006ba6;
+}
+
+.confirm-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.prompt-cancel-btn {
+  /* Renamed to avoid conflict with existing .cancel-btn */
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #404040;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.prompt-cancel-btn:hover {
+  background: #353535;
+  border-color: #606060;
+  color: #fff;
+}
+
+.error-text {
+  display: block;
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.account-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2ecc71;
+  /* Green from the second image */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Second account avatar color as seen in the image - would need dynamic logic but setting base green */
+.account-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.account-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.account-email {
+  font-size: 13px;
+  color: #a0a0a0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.signout-btn {
+  background: #dc3545;
+  /* Red button as seen in image */
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.signout-btn:hover {
+  background: #c82336;
+}
+
+.add-account-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  border: 1px dashed #404040;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.add-account-btn:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: #606060;
+}
+
+
+/* Add Account Form */
+.add-account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-account-form h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #cccccc;
+}
+
+.form-group input {
+  padding: 10px;
+  background: #353535;
+  border: 1px solid #505050;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 13px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0078d4;
+  box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
+}
+
+.form-group input:disabled {
+  background: #303030;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.error-message {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #ff6b6b;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  border: 1px solid #dc3545;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.submit-btn {
+  flex: 1;
+  padding: 10px;
+  background: #0078d4;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #006ba6;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  flex: 1;
+  padding: 10px;
+  background: #404040;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-btn:hover {
+  background: #505050;
+}
+
+.account-modal-footer {
+  border-top: 1px solid #404040;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.footer-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: transparent;
+  color: #cccccc;
+  border: 1px solid #505050;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.footer-btn:hover {
+  background: #353535;
+  color: #ffffff;
+  border-color: #606060;
+}
+
+@media (max-width: 600px) {
+  .account-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .account-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .signout-btn {
+    width: 100%;
+  }
+
+  .add-account-btn {
+    flex-direction: column;
+  }
+
+  .account-modal-footer {
+    flex-direction: column;
+  }
+
+  .footer-btn {
+    width: 100%;
+  }
+}
